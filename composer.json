@@ -1,0 +1,28 @@
+{
+    "name": "floriankarsten/merkur-blocks-loader",
+    "description": "Kirby CMS blocks auto loader for Merkur or to be used alone",
+    "type": "kirby-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Florian Karsten",
+            "email": "code@floriankarsten.com"
+        }
+    ],
+    "require": {
+        "getkirby/composer-installer": "^1.1",
+        "php": ">=7.4.0",
+        "getkirby/cms": "^3.5",
+        "hananils/kirby-colors": "^1.2",
+        "oblik/kirby-link-field": "^3.0",
+        "diesdasdigital/kirby-meta-knight": "^1.0"
+    },
+    "autoload": {
+		"psr-4": {
+            "Merkur\\": "src/"
+        }
+	},
+    "config": {
+        "optimize-autoloader": true
+    }
+}
