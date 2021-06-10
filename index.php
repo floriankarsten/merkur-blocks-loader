@@ -8,26 +8,26 @@ Kirby::plugin('floriankarsten/merkur-blocks-loader', [
 	],
 
 	'hooks' => [
-        'system.loadPlugins:after' => function () {
-			if(option('debug')) {
+		'system.loadPlugins:after' => function () {
+			if (option('debug')) {
 				$blocks = \Merkur\Blocksloader::loadBlocks();
 			} else {
 				$blocksCache = kirby()->cache('floriankarsten.merkur-blocks-loader');
 				$blocks = $blocksCache->get('blocks');
 				ray($blocks);
 
-				if($blocks === null) {
+				if ($blocks === null) {
 					$blocks = \Merkur\Blocksloader::loadBlocks();
 					$blocksCache->set('blocks', $blocks, 600);
 				}
 			}
 
-			if(!empty($blocks['blueprints']) || !empty($blocks['snippets'])) {
+			if (!empty($blocks['blueprints']) || !empty($blocks['snippets'])) {
 				kirby()->extend([
 					'blueprints' => $blocks['blueprints'],
 					'snippets' => $blocks['snippets'],
 				], kirby()->plugin('floriankarsten.merkur-blocks-loader'));
 			}
-        }
-    ]
+		}
+	]
 ]);

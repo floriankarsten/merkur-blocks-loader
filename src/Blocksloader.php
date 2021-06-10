@@ -3,7 +3,6 @@ namespace Merkur;
 
 class Blocksloader {
 	public static function loadBlocks() {
-
 		$blocks = ['blueprints' => [], 'snippets' => []];
 		$blocksDir = kirby()->root('site') . "/" . option('floriankarsten.merkur-blocks-loader.dirname', 'blocks');
 		foreach (\Dir::dirs($blocksDir) as $folder) {
@@ -20,9 +19,3 @@ class Blocksloader {
 	}
 
 }
-
-
-
-
-
-?>
