@@ -6,15 +6,13 @@ Kirby::plugin('floriankarsten/merkur-blocks-loader', [
 	'options' => [
 		'cache' => true
 	],
-
 	'hooks' => [
 		'system.loadPlugins:after' => function () {
-			if (option('debug')) {
+			if (option('debug') || option('floriankarsten.merkur-blocks-loader.cache', true)) {
 				$blocks = \Merkur\Blocksloader::loadBlocks();
 			} else {
 				$blocksCache = kirby()->cache('floriankarsten.merkur-blocks-loader');
 				$blocks = $blocksCache->get('blocks');
-				ray($blocks);
 
 				if ($blocks === null) {
 					$blocks = \Merkur\Blocksloader::loadBlocks();
