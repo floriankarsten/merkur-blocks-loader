@@ -5,8 +5,7 @@ class Blocksloader {
 	public static function loadBlocks() {
 
 		$blocks = ['blueprints' => [], 'snippets' => []];
-
-		$blocksDir = kirby()->root('site') . "/blocks";
+		$blocksDir = kirby()->root('site') . "/" . option('floriankarsten.merkur-blocks-loader.dirname', 'blocks');
 		foreach (\Dir::dirs($blocksDir) as $folder) {
 			$blueprint = $blocksDir . "/". $folder . "/" . $folder . ".yml";
 			$snippet = $blocksDir . "/". $folder . "/" . $folder . ".php";
@@ -19,7 +18,6 @@ class Blocksloader {
 		}
 		return $blocks;
 	}
-
 
 }
 
