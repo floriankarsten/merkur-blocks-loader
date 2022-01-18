@@ -19,7 +19,7 @@ You can turn off caching using `floriankarsten.merkur-blocks-loader.cache`
 // Default settings
 [
 	'floriankarsten.merkur-blocks-loader' => [
-		'cache'=> true,
+		'cache' => true,
 		'dirname' => 'blocks'
 	],
 ]

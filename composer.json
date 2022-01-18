@@ -12,10 +12,7 @@
     "require": {
         "getkirby/composer-installer": "^1.1",
         "php": ">=7.4.0",
-        "getkirby/cms": "^3.5",
-        "hananils/kirby-colors": "^1.2",
-        "oblik/kirby-link-field": "^3.0",
-        "diesdasdigital/kirby-meta-knight": "^1.0"
+        "getkirby/cms": "^3.6"
     },
     "autoload": {
 		"psr-4": {
