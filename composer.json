@@ -2,6 +2,7 @@
     "name": "floriankarsten/merkur-blocks-loader",
     "description": "Kirby CMS blocks auto loader for Merkur or to be used alone",
     "type": "kirby-plugin",
+	"version": "0.1.2",
     "license": "MIT",
     "authors": [
         {
